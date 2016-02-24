@@ -8,7 +8,7 @@
 #include <string>
 #include <set>
 using namespace std;
-int f[100001];
+int f[100010];
 int find(int x){
 	return x == f[x] ? x : f[x] = find(f[x]);
 }
@@ -16,13 +16,13 @@ int main()
 {
 	int a, b;
 	int ans = 0;
-	for(int i = 0; i < 100001; i++)
+	for(int i = 0; i < 100010; i++)
 			f[i] = i;
 	while(scanf("%d", &a) != EOF){
 		if(a == -1){
 			printf("%d\n", ans);
 			ans = 0;
-			for(int i = 0; i < 100001; i++)
+			for(int i = 0; i < 100010; i++)
 				f[i] = i;
 			continue;
 		}		
