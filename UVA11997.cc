@@ -39,10 +39,12 @@ void solve(int k)
 	}
 	printf("\n");
 }
+
 bool cmp(int a, int b)
 {
 	return a > b;
 }
+
 int main()
 {
 	int k;
