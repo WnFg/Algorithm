@@ -4,7 +4,9 @@
 #include <cstring>
 #include <cstdlib>
 #include <string>
+#include <algorithm>
 using namespace std;
+
 int mp[755][755];
 int* merge(int a[], int b[], int k)
 {
@@ -31,21 +33,28 @@ void solve(int k)
 		if(i > 1) free(p);
 		p = q;
 	}
-	for(int i = 0; i < k; i++){
-		printf("%d ", -p[i]);
+    printf("%d", -p[0]);
+	for(int i = 1; i < k; i++){
+		printf(" %d", -p[i]);
 	}
 	printf("\n");
+}
+bool cmp(int a, int b)
+{
+	return a > b;
 }
 int main()
 {
 	int k;
 	while(scanf("%d", &k) != EOF){
 		int a;
-		for(int i = 0; i < k; i++)
+		for(int i = 0; i < k; i++){
 			for(int j = 0; j < k; j++){
 				scanf("%d", &a);
 				mp[i][j] = -a;
 			}
+			sort(mp[i], mp[i] + k, cmp);
+		}
 		solve(k);
 	}
 	return 0;
