@@ -68,7 +68,8 @@ int main()
 			LL ret2 = i - 1 - ret1 + eqL[i] - 1;
 			LL ret3 = n - below[a[i]] - 1 - ret2;
 			LL ret4 = below[a[i]] - ret1 - 1 + eq[a[i]];
-			ans += ret1 * ret3 + ret2 * ret4;
+			ans += ret1 * ret3 + ret2 * ret4 - (eq[a[i]] - eqL[i])*(eqL[i] - 1);
+	//		cout << ret1 << endl;
 			atree.add(a[i], 1);
 		}
 		printf("%lld\n", ans);
