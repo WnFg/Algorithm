@@ -8,6 +8,7 @@ using namespace std;
 
 priority_queue<pair<int, int> > que;
 int num[3001];
+
 int main()
 {
 	char s[100];

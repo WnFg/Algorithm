@@ -14,7 +14,6 @@ pair<int, int> f[20010];
 
 int find(int x)
 {
-	//cout << x << " cvfbcbv" << endl;
 	if(x == f[x].first){
 		return x;
 	}else{
