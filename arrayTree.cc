@@ -1,6 +1,5 @@
-#include <iostream>
-using namespace std;
-#define max_size 20010
+#define max_size 1000
+
 struct arrayTree
 {
 	int cnt[max_size];
@@ -27,6 +26,3 @@ struct arrayTree
 	}
 };
 
-int main()
-{
-}

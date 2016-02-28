@@ -8,10 +8,14 @@
 #include <string>
 #include <set>
 using namespace std;
+
 int f[100010];
-int find(int x){
+
+int find(int x)
+{
 	return x == f[x] ? x : f[x] = find(f[x]);
 }
+
 int main()
 {
 	int a, b;
