@@ -51,7 +51,7 @@ int query(int l, int r)
 		return ans;
 	
 	int len = log2(r - l + 1);
-	int t = pow(2, len);
+	int t = 1 << len;
 	return max(ans, max(table[l][len], table[r - t + 1][len]));
 }
 int main()
@@ -73,10 +73,6 @@ int main()
 			record[i] = t;
 			last = a;
 		}
-		for(int i = 0; i <= t; i++)
-			cout << total[i] << endl;
-		for(int i = 0; i < n; i++)
-			cout << record[i] << endl;
 		init(t + 1);
 		int l, r;
 		while(q--){
