@@ -19,11 +19,11 @@ int record[200010];
 void init(int n)
 {
 	int a = 0;
+	memset(table, 0, sizeof(table));
 	for(int i = 0; i < n; i++){
 		table[i][0] = total[i] - a;
 		a = total[i];
 	}
-//	cout << limit << endl;
 	int tt = 1;
 	for(int j = 1; (1<<j) <= n; j++){
 		for(int i = 0; i + (tt << 1) - 1 < n; i++){
@@ -39,10 +39,8 @@ int query(int l, int r)
 		return r - l + 1;
 
 	int left = total[record[l]] - l, right;
-	if(record[r] != 0)
-		right =  r + 1 - total[record[r] - 1];
-	else
-		right = r + 1;
+	right =  r + 1 - total[record[r] - 1];
+	
 	int ans = max(left, right);
 	r = record[r] - 1;
 	l = record[l] + 1;
@@ -78,6 +76,8 @@ int main()
 			record[i] = t;
 			last = a;
 		}
+//		for(int i = 0; i <= t; i++)
+//			cout << total[i] << endl;
 		init(t + 1);
 		int l, r;
 		while(q--){
