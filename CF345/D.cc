@@ -28,10 +28,7 @@ int solve(string s, int t, int q)
 			t -= b + 1;
 		else
 			t -= 1;
-	/*	if(i == n + 1){
-			cout << L << " " << t << "  ff"<< endl;	
-		}*/
-		
+	
 		while(t < 0){
 			if(s[L] == 'w')
 				t += 2*a + b + 1;
@@ -59,7 +56,6 @@ int main()
 			t1 -= 1 + b;
 		}else
 			t1 -= 1;
-	//	cout << t1 << " " << i << endl;
 
 		if(t1 < 0) { break;}
 		t1 -= a;
@@ -81,6 +77,7 @@ int main()
 	if(ans == n) {cout << n << endl; return 0;}
 
 	ans = max(ans, solve(s, t, 0));
+	
 	reverse(s.begin(), s.end());
 	ans = max(ans, solve(s, t, 1));
 
