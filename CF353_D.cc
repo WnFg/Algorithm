@@ -29,7 +29,7 @@ int query(int l, int r) {
 
 int ans[100005];
 
-
+int qq = 0;
 
 void solve(int l, int r, int father) {
 	if(r - l == 1) {
@@ -38,9 +38,9 @@ void solve(int l, int r, int father) {
 	}
 	int x = query(l, r);
 	
-	//cout << l << " " << r << " " << x << " " << a[x].second << endl;
-//	return;
-	ans[x] = father;
+	if(qq++ < 2)
+		cout << l << " " << r << " " << x << " " << a[x].second << endl;
+	ans[a[x].second] = father;
 	if(x > l)
 		solve(l , x, a[x].first);
 	if(x + 1 < r)
